@@ -10,6 +10,7 @@ import {DetailsFormComponent} from './details-form/details-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
 import {MatSliderModule} from "@angular/material/slider";
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -27,9 +28,9 @@ import {MatSliderModule} from "@angular/material/slider";
     ReactiveFormsModule,
     MatCardModule,
     MatSliderModule,
+    MatRadioModule,
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

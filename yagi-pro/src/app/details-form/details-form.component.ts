@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {YagiInterface} from "../interfaces";
 
 @Component({
@@ -11,11 +11,17 @@ export class DetailsFormComponent implements OnInit {
   // Input contract details for rendering
   @Input('yagi') public yagi = <YagiInterface>{};
 
-  constructor() { }
+  boomIsolation: string = '1';
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  value = 'Clear me';
+  public boomIsolationChange(): void {
+    console.log(this.boomIsolation);
+    this.yagi.boomIsolated = this.boomIsolation === '1';
+  }
 
 }

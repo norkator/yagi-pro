@@ -1,23 +1,33 @@
 <mat-card>
-  <mat-form-field class="form-input">
-    <mat-label>Frequency (MHz)</mat-label>
-    <input matInput placeholder="{{yagi.frequency}}" value="{{yagi.frequency}}">
-  </mat-form-field>
-  <mat-form-field class="form-input">
-    <mat-label>Elements (Count)</mat-label>
-    <input matInput placeholder="{{yagi.elements}}" value="{{yagi.elements}}">
-  </mat-form-field>
-
-
-  <mat-form-field class="form-input">
-    <mat-label>Parasitic diameter (mm)</mat-label>
-    <input matInput placeholder="{{yagi.parasiticDiameter}}" value="{{yagi.parasiticDiameter}}">
-  </mat-form-field>
-  <mat-form-field class="form-input">
-    <mat-label>Boom diameter (mm)</mat-label>
-    <input matInput placeholder="{{yagi.boomDiameter}}" value="{{yagi.boomDiameter}}">
-  </mat-form-field>
-
-
-
+  <p>
+    <mat-form-field class="form-input">
+      <mat-label>Frequency (MHz)</mat-label>
+      <input (change)="yagi.frequency = $event.target.value" matInput placeholder="{{yagi.frequency}}"
+             value="{{yagi.frequency}}">
+    </mat-form-field>
+    <mat-form-field class="form-input">
+      <mat-label>Elements (Count)</mat-label>
+      <input (change)="yagi.elements = $event.target.value" matInput placeholder="{{yagi.elements}}"
+             value="{{yagi.elements}}">
+    </mat-form-field>
+    <mat-form-field class="form-input">
+      <mat-label>Parasitic diameter (mm)</mat-label>
+      <input (change)="yagi.parasiticDiameter = $event.target.value" matInput placeholder="{{yagi.parasiticDiameter}}"
+             value="{{yagi.parasiticDiameter}}">
+    </mat-form-field>
+    <mat-form-field class="form-input">
+      <mat-label>Boom diameter (mm)</mat-label>
+      <input (change)="yagi.boomDiameter = $event.target.value" matInput placeholder="{{yagi.boomDiameter}}"
+             value="{{yagi.boomDiameter}}">
+    </mat-form-field>
+  </p>
+  <a class="form-input">Boom is isolated from parasitics?</a>
+  <p>
+    <mat-radio-group value="1" aria-label="Select an option" class="form-input" [(ngModel)]="boomIsolation"
+                     (change)="boomIsolationChange()">
+      <mat-radio-button value="1">Yes</mat-radio-button>
+      <mat-radio-button value="2">No</mat-radio-button>
+    </mat-radio-group>
+  </p>
+  <a class="form-input text-margin">Form updates automatically</a>
 </mat-card>

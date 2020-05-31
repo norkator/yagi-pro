@@ -16,7 +16,12 @@
   <p>Fill in your basic details for Yagi Uda antenna</p>
 
 
-  <app-details-form [yagi]="yagi" style="margin-top: 20px;"></app-details-form>
+  <app-details-form [(yagi)]="yagi" (change)="reCalculateYagi()" style="margin-top: 20px;"></app-details-form>
+
+
+
+  boomLength: {{yagi.boomLength}}
+  gain: {{yagi.gain}}
 
 
   <!-- Footer -->
