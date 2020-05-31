@@ -1,4 +1,4 @@
-import {YagiInterface} from "./interfaces";
+import {YagiElementInterface, YagiInterface} from "./interfaces";
 
 export class YagiCalculator {
 
@@ -116,11 +116,26 @@ export class YagiCalculator {
 
     reflectorLength = (yagi.boomIsolated ? reflectorLength : reflectorLength + correlation);
 
-    result = result + ("Reflector Length   : " + Math.round(reflectorLength * lambda) + " mm" + '\n');
+    const reflectorLen = Math.round(reflectorLength * lambda);
+    result = result + ("Reflector Length   : " + reflectorLen + " mm" + '\n');
     result = result + ("Reflector Position :  0 mm" + '\n');
     result = result + "-------------------------------------------------------------" + '\n';
-    result = result + ("Dipole Position    : " + Math.round(distance[0] * lambda) + " mm" + '\n');
+    yagi.yagiElements.push(<YagiElementInterface>{
+      name: 'Reflector',
+      distance: null,
+      length: reflectorLen,
+      position: 0
+    });
+
+    const dipolePos = Math.round(distance[0] * lambda);
+    result = result + ("Dipole Position    : " + dipolePos + " mm" + '\n');
     result = result + "-------------------------------------------------------------" + '\n';
+    yagi.yagiElements.push(<YagiElementInterface>{
+      name: 'Dipole',
+      distance: null,
+      length: null,
+      position: dipolePos
+    });
 
     let cum_length = distance[0] * lambda;
     let direX;
@@ -130,17 +145,27 @@ export class YagiCalculator {
 
       direX = (yagi.boomIsolated ? lambda * (min[j] + (max[j] - min[j]) * directorLambda) : lambda * (correlation + min[j] + (max[j] - min[j]) * directorLambda));
 
+      let yagiElement = <YagiElementInterface>{name: 'Director'};
 
-      result = result + "Director #" + j + " Position : " + Math.round(cum_length) + " mm ,  Length : " + Math.round(direX) + " mm" + '\n';
+      const directorPos = Math.round(cum_length);
+      const directorLength = Math.round(direX);
+      result = result + "Director #" + j + " Position : " + directorPos + " mm ,  Length : " + directorLength + " mm" + '\n';
+      yagiElement.position = directorPos;
+      yagiElement.length = directorLength;
       if (j == 1) {
-        result = result + "Distance Dipole - Dir. #1 : " + Math.round(distance[j] * lambda) + " mm " + '\n';
+        const dis = Math.round(distance[j] * lambda);
+        yagiElement.distance = dis;
+        result = result + "Distance Dipole - Dir. #1 : " + dis + " mm " + '\n';
       }
 
       if (j > 1) {
-        result = result + "Distance Dir. #" + (j - 1) + " - Dir. #" + j + " : " + Math.round(distance[j] * lambda) + " mm " + '\n';
+        const dis = Math.round(distance[j] * lambda);
+        yagiElement.distance = dis;
+        result = result + "Distance Dir. #" + (j - 1) + " - Dir. #" + j + " : " + dis + " mm " + '\n';
       }
 
       result = result + "-------------------------------------------------------------" + '\n';
+      yagi.yagiElements.push(yagiElement);
     }
 
 
@@ -149,7 +174,6 @@ export class YagiCalculator {
     } else {
       result = result + "Directors / Parasitics are not isolated." + '\n' + "The length has been increased to compensate for that." + '\n';
     }
-
 
     console.info(result);
   }

@@ -6,7 +6,7 @@ export interface YagiInterface {
   parasiticDiameter: number; // mm
   boomDiameter: number; // mm
   boomIsolated: boolean;
-  yagiElements: YagiElementInterface;
+  yagiElements: YagiElementInterface[];
 }
 
 export interface YagiElementInterface {

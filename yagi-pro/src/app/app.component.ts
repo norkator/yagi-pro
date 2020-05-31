@@ -20,6 +20,7 @@ export class AppComponent extends YagiCalculator implements OnInit {
     parasiticDiameter: 10,
     boomDiameter: 20,
     boomIsolated: true,
+    yagiElements: []
   };
 
 
