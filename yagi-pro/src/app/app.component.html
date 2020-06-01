@@ -16,6 +16,26 @@
   <p>Fill in your basic details for Yagi Uda antenna</p>
 
 
+  <mat-accordion class="injected-component-style">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Instructions
+        </mat-panel-title>
+        <mat-panel-description>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>A Yagi–Uda antenna, commonly known as a Yagi antenna, is a directional antenna consisting of multiple parallel
+        elements in a line, usually half-wave dipoles made of metal rods. Yagi–Uda antennas consist of a single
+        driven element connected to the transmitter or receiver with a transmission line, and additional "parasitic
+        elements" which are not connected to the transmitter or receiver: a so-called reflector and one or more
+        directors. It was invented in 1926 by Shintaro Uda of Tohoku Imperial University, Japan, and (with a
+        lesser role played by his colleague) Hidetsugu Yagi.</p>
+      <button class="btn-spacer" mat-stroked-button color="primary" (click)="yagiWikiLink()">Read more</button>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
   <app-details-form class="injected-component-style" [(yagi)]="yagi" (yagiChange)="reCalculateYagi()"
                     (change)="reCalculateYagi()"></app-details-form>
 

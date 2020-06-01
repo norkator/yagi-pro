@@ -21,6 +21,11 @@ export class YagiModelComponent implements OnInit {
   }
 
 
+  public getBoomLength(boomLength: number): number {
+    return Math.floor(boomLength * 1000);
+  }
+
+
   public getElementStyle(element: YagiElementInterface): any {
     return {
       'width': this.calculateWidthPercentage(element) + '%',
@@ -31,14 +36,14 @@ export class YagiModelComponent implements OnInit {
 
 
   public getBoomStyle(element: YagiElementInterface): any {
-    let h = (element.distance === null ? element.position : element.distance)  / 2;
+    let h = (element.distance === null ? element.position : element.distance) / 2;
     if (h <= 0) {
       h = 40;
     }
 
     return {
       'width': '2%',
-      'height':  h + 'px',
+      'height': h + 'px',
       'background-color': '#c2c3c4'
     }
   }
