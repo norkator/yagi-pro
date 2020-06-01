@@ -1,9 +1,9 @@
 <mat-card>
   <mat-chip-list aria-label="Fish selection">
     <mat-chip color="primary" selected>Gain approx. {{yagi.gain}} dBd</mat-chip>
-    <mat-chip>Boom length: {{yagi.boomLength * 1000}} mm</mat-chip>
+    <mat-chip>Boom length: {{getBoomLength(yagi.boomLength)}} mm</mat-chip>
   </mat-chip-list>
-  <div>
+  <div class="element-margin">
     <ng-container *ngFor="let element of yagi.yagiElements">
 
       <div class="center-element" [ngStyle]="getBoomStyle(element)"></div>
