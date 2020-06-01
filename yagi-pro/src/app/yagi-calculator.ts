@@ -173,9 +173,9 @@ export class YagiCalculator {
 
 
     if (yagi.boomIsolated) {
-      result = result + "Directors / Parasitics are isolated." + '\n' + "Please choose an isolater thicker than : " + Math.round(boomDiameter / 2) + " mm" + '\n';
+      result = result + "Directors / Parasitics are isolated." + '\n' + "Please choose an isolator thicker than : " + Math.round(boomDiameter / 2) + " mm" + '\n';
     } else {
-      result = result + "Directors / Parasitics are not isolated." + '\n' + "The length has been increased to compensate for that." + '\n';
+      result = result + "Directors / Parasitics are not isolated." + '\n' + "The length has been increased to compensate." + '\n';
     }
 
     console.info(result);
