@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip color="primary" selected>Gain approx. {{yagi.gain}} dBd</mat-chip>
+    <mat-chip>Boom length: {{yagi.boomLength * 1000}} mm</mat-chip>
+  </mat-chip-list>
+  <div>
+    <ng-container *ngFor="let element of yagi.yagiElements">
+
+      <div class="center-element" [ngStyle]="getBoomStyle(element)"></div>
+
+      <div class="center-element parasitic-element" [ngStyle]="getElementStyle(element)"></div>
+
+    </ng-container>
+
+    <!-- Boom lower threshold -->
+    <div class="center-element" style="width: 2%; height: 40px; background-color: #c2c3c4;"></div>
+  </div>
+</mat-card>

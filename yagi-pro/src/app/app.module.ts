@@ -1,18 +1,45 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule} from "@angular/material/input";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButton, MatButtonModule} from "@angular/material/button";
+import {DetailsFormComponent} from './details-form/details-form.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatCardModule} from "@angular/material/card";
+import {MatSliderModule} from "@angular/material/slider";
+import {MatRadioModule} from "@angular/material/radio";
+import {YagiModelComponent} from './yagi-model/yagi-model.component';
+import {MatTableModule} from "@angular/material/table";
+import {YagiTableComponent} from './yagi-table/yagi-table.component';
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DetailsFormComponent,
+    YagiModelComponent,
+    YagiTableComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatSliderModule,
+    MatRadioModule,
+    MatTableModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
