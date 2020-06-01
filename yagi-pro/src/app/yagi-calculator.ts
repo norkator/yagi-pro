@@ -14,6 +14,9 @@ export class YagiCalculator {
     let boomDiameter = yagi.boomDiameter;				//	in [mm]
     let parasiticDiameterD = yagi.parasiticDiameter;
 
+    // Clear earlier elements
+    yagi.yagiElements = [];
+
     let lambda = 300000 / freq;
     let distance = [];
     let q = 0.041446332341;
@@ -133,7 +136,7 @@ export class YagiCalculator {
     yagi.yagiElements.push(<YagiElementInterface>{
       name: 'Dipole',
       distance: null,
-      length: null,
+      length: reflectorLen / 2,
       position: dipolePos
     });
 
@@ -176,6 +179,7 @@ export class YagiCalculator {
     }
 
     console.info(result);
+    console.info('Yagi elements length: ' + yagi.yagiElements.length)
   }
 
 

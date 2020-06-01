@@ -11,11 +11,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatRadioModule} from "@angular/material/radio";
+import {YagiModelComponent} from './yagi-model/yagi-model.component';
+import {MatTableModule} from "@angular/material/table";
+import { YagiTableComponent } from './yagi-table/yagi-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DetailsFormComponent
+    DetailsFormComponent,
+    YagiModelComponent,
+    YagiTableComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,7 @@ import {MatRadioModule} from "@angular/material/radio";
     MatCardModule,
     MatSliderModule,
     MatRadioModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

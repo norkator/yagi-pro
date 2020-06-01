@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-table #table [(dataSource)]="yagi.yagiElements">
+
+    <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
+      <mat-header-cell *matHeaderCellDef>{{disCol}}</mat-header-cell>
+      <mat-cell *matCellDef="let element ">
+        {{ formatElementData(disCol.toLowerCase(), element[disCol.toLowerCase()]) }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</mat-card>

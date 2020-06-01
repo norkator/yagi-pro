@@ -11,6 +11,8 @@ import {YagiInterface} from "./interfaces";
 )
 export class AppComponent extends YagiCalculator implements OnInit {
 
+  changeTrigger = 0;
+
   title = 'yagi-pro';
   public yagi = <YagiInterface>{
     frequency: 145,
@@ -25,13 +27,13 @@ export class AppComponent extends YagiCalculator implements OnInit {
 
 
   ngOnInit(): void {
-    // this.dimRest(this.yagi);
     this.yagiCalculate(this.yagi)
   }
 
 
   public reCalculateYagi(): void {
-    this.yagiCalculate(this.yagi)
+    this.yagiCalculate(this.yagi);
+    this.changeTrigger++;
   }
 
 
