@@ -13,7 +13,8 @@ import {MatSliderModule} from "@angular/material/slider";
 import {MatRadioModule} from "@angular/material/radio";
 import {YagiModelComponent} from './yagi-model/yagi-model.component';
 import {MatTableModule} from "@angular/material/table";
-import { YagiTableComponent } from './yagi-table/yagi-table.component';
+import {YagiTableComponent} from './yagi-table/yagi-table.component';
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { YagiTableComponent } from './yagi-table/yagi-table.component';
     MatSliderModule,
     MatRadioModule,
     MatTableModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
