@@ -25,11 +25,31 @@ Public production version is available here [YagiPro](https://api.nitramite.com/
 Notes
 ============
 
-Run Angular production build with
+###### Run Angular production build locally with
 ```bash
 $ npm prodbuild
 ```
 
+
+###### Jenkins build notes
+
+Step 1
+```cmd
+cd %WORKSPACE%\yagi-pro\
+npm install
+```
+
+Step 2
+```cmd
+cd %WORKSPACE%\yagi-pro\
+npm install @angular/cli
+```
+
+Step 3
+```cmd
+cd %WORKSPACE%\yagi-pro\
+node_modules\.bin\ng build --prod
+```
 
 Authors
 ============
