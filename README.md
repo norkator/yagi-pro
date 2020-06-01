@@ -19,7 +19,7 @@ Table of contents
 Website
 ============
 
-Public production version is available here [YagiPro](https://api.nitramite.com/yagipro/).
+Public production version is available here [YagiPro](https://yagipro.nitramite.com/).
 
 
 Notes
