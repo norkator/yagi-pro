@@ -15,8 +15,9 @@ import {YagiModelComponent} from './yagi-model/yagi-model.component';
 import {MatTableModule} from "@angular/material/table";
 import {YagiTableComponent} from './yagi-table/yagi-table.component';
 import {MatChipsModule} from "@angular/material/chips";
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { environment } from '../environments/environment';
     MatRadioModule,
     MatTableModule,
     MatChipsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    MatExpansionModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
   ],
   providers: [],
   bootstrap: [AppComponent]
