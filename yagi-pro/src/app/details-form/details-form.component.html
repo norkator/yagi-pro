@@ -23,10 +23,10 @@
   </p>
   <a class="form-input">Boom is isolated from parasitics?</a>
   <p>
-    <mat-radio-group value="1" aria-label="Select an option" class="form-input" [(ngModel)]="boomIsolation"
-                     (change)="boomIsolationChange()">
-      <mat-radio-button value="1">Yes</mat-radio-button>
-      <mat-radio-button value="2">No</mat-radio-button>
+    <mat-radio-group [value]="yagi.boomIsolated" [(ngModel)]="yagi.boomIsolated" aria-label="Select an option"
+                     class="form-input">
+      <mat-radio-button (change)="boomIsolationChange($event)" [value]="true">Yes</mat-radio-button>
+      <mat-radio-button (change)="boomIsolationChange($event)" [value]="false">No</mat-radio-button>
     </mat-radio-group>
   </p>
   <a class="form-input text-margin">Form updates automatically</a>

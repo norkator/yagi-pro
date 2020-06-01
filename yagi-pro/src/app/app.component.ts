@@ -36,5 +36,4 @@ export class AppComponent extends YagiCalculator implements OnInit {
     this.changeTrigger++;
   }
 
-
 }

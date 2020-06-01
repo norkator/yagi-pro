@@ -16,7 +16,8 @@
   <p>Fill in your basic details for Yagi Uda antenna</p>
 
 
-  <app-details-form class="injected-component-style" [(yagi)]="yagi" (change)="reCalculateYagi()"></app-details-form>
+  <app-details-form class="injected-component-style" [(yagi)]="yagi" (yagiChange)="reCalculateYagi()"
+                    (change)="reCalculateYagi()"></app-details-form>
 
   <app-yagi-table class="injected-component-style" [(yagi)]="yagi" [changeTrigger]="changeTrigger"></app-yagi-table>
 

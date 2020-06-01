@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {YagiInterface} from "../interfaces";
+import {MatRadioChange} from "@angular/material/radio";
 
 @Component({
   selector: 'app-details-form',
@@ -10,8 +11,7 @@ export class DetailsFormComponent implements OnInit {
 
   // Input contract details for rendering
   @Input('yagi') public yagi = <YagiInterface>{};
-
-  boomIsolation: string = '1';
+  @Output('yagiChange') yagiChange = new EventEmitter();
 
   constructor() {
   }
@@ -19,9 +19,9 @@ export class DetailsFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public boomIsolationChange(): void {
-    console.log(this.boomIsolation);
-    this.yagi.boomIsolated = this.boomIsolation === '1';
+  public boomIsolationChange(event: MatRadioChange): void {
+    console.log(event.value);
+    this.yagiChange.emit(this.yagi);
   }
 
 }
