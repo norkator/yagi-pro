@@ -36,8 +36,8 @@ export class AppComponent extends YagiCalculator implements OnInit {
     this.changeTrigger++;
   }
 
-  public yagiWikiLink(): void {
-    window.open('https://en.wikipedia.org/wiki/Yagi%E2%80%93Uda_antenna', "_blank");
+  public openUrl(url: string): void {
+    window.open(url, "_blank");
   }
 
 }

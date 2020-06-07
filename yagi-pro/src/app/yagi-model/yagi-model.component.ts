@@ -67,4 +67,13 @@ export class YagiModelComponent implements OnInit {
   }
 
 
+  public getTotalParasiticsLength(): number {
+    let len = 0;
+    this.yagi.yagiElements.forEach(element => {
+      len = len + element.length;
+    });
+    return len;
+  }
+
+
 }

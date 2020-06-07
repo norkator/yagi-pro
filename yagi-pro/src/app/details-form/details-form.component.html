@@ -3,22 +3,22 @@
     <mat-form-field class="form-input">
       <mat-label>Frequency (MHz)</mat-label>
       <input (change)="yagi.frequency = $event.target.value" matInput placeholder="{{yagi.frequency}}"
-             value="{{yagi.frequency}}">
+             value="{{yagi.frequency}}" type="number">
     </mat-form-field>
     <mat-form-field class="form-input">
       <mat-label>Parasitic elements (Count)</mat-label>
       <input (change)="yagi.elements = $event.target.value" matInput placeholder="{{yagi.elements}}"
-             value="{{yagi.elements}}">
+             value="{{yagi.elements}}" type="number" min="3" max="22">
     </mat-form-field>
     <mat-form-field class="form-input">
       <mat-label>Parasitic diameter (mm)</mat-label>
       <input (change)="yagi.parasiticDiameter = $event.target.value" matInput placeholder="{{yagi.parasiticDiameter}}"
-             value="{{yagi.parasiticDiameter}}">
+             value="{{yagi.parasiticDiameter}}" type="number" min="3" max="21">
     </mat-form-field>
     <mat-form-field class="form-input">
       <mat-label>Boom diameter (mm)</mat-label>
       <input (change)="yagi.boomDiameter = $event.target.value" matInput placeholder="{{yagi.boomDiameter}}"
-             value="{{yagi.boomDiameter}}">
+             value="{{yagi.boomDiameter}}" type="number" min="20" max="100">
     </mat-form-field>
   </p>
   <a class="form-input">Boom is isolated from parasitics?</a>
