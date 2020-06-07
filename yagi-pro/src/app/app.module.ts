@@ -18,6 +18,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {MatExpansionModule} from "@angular/material/expansion";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
     MatTableModule,
     MatChipsModule,
     MatExpansionModule,
+    MatGridListModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
   ],
   providers: [],

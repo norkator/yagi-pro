@@ -88,3 +88,9 @@ footer a {
   flex-direction: column;
   align-items: center;
 }
+
+.grid-tile-position {
+  max-width: 50%;
+  position: absolute;
+  left: 5px;
+}
