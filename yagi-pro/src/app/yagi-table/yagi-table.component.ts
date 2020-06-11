@@ -14,7 +14,7 @@ export class YagiTableComponent implements OnInit {
   @Input('changeTrigger') public changeTrigger;
 
 
-  displayedColumns: string[] = ['Name', 'Length', 'Position', 'Distance'];
+  displayedColumns: string[] = ['Name', 'Number', 'Length', 'Position', 'Distance'];
   @ViewChild('table') table: MatTable<Element>;
 
 
@@ -33,7 +33,7 @@ export class YagiTableComponent implements OnInit {
 
 
   public formatElementData(elementName: string, elementData: string): string {
-    if (elementName === 'name') {
+    if (elementName === 'name' || elementName === 'number') {
       return elementData;
     } else {
       return elementData === null ? '' : elementData + ' mm';

@@ -11,6 +11,7 @@ export interface YagiInterface {
 
 export interface YagiElementInterface {
   name: string;
+  number: number;
   length: number;
   position: number;
   distance: number;

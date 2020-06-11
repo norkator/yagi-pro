@@ -167,6 +167,8 @@ export class YagiCalculator {
         result = result + "Distance Dir. #" + (j - 1) + " - Dir. #" + j + " : " + dis + " mm " + '\n';
       }
 
+      yagiElement.number = j;
+
       result = result + "-------------------------------------------------------------" + '\n';
       yagi.yagiElements.push(yagiElement);
     }

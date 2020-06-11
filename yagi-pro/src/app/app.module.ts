@@ -19,13 +19,16 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatGridListModule} from "@angular/material/grid-list";
+import {YagiPartsComponent} from './yagi-parts/yagi-parts.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailsFormComponent,
     YagiModelComponent,
-    YagiTableComponent
+    YagiTableComponent,
+    YagiPartsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatChipsModule,
     MatExpansionModule,
     MatGridListModule,
+    MatCheckboxModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
   ],
   providers: [],
